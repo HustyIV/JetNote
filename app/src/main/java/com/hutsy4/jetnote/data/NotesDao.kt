@@ -17,7 +17,6 @@ interface NotesDao {
     suspend fun deleteNote(note: Note)
 
     @Query("SELECT * FROM notes ORDER BY createdDate DESC")
-    fun getNotes(): Flow<List<Note>>
-
+    suspend fun getNotes(): Flow<List<Note>>
 
 }
